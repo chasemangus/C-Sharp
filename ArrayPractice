@@ -1,0 +1,121 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Array
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            ReadAndPrintArray();
+            ReverseArray();
+            CopyArraytoArray();
+        }
+
+        /* Store elements in an array and print it. */
+        static void ReadAndPrintArray()
+        {
+            int[] arr = new int[10];
+            int i;
+            Console.Write("\n\nRead and Print elements of an array:\n");
+            Console.Write("-----------------------------------------\n");
+
+            Console.Write("Input 10 elements in the array :\n");
+            for (i = 0; i < 10; i++)
+            {
+                Console.Write("element - {0} : ", i);
+                arr[i] = Convert.ToInt32(Console.ReadLine());
+            }
+
+            Console.Write("\nElements in array are: ");
+            for (i = 0; i < 10; i++)
+            {
+                Console.Write("{0}  ", arr[i]);
+            }
+            Console.Write("\n");
+            Console.Read();
+        }
+
+        /* Read n number of values in an array and display it in reverse order.*/
+        static void ReverseArray()
+        {
+            int i, n;
+            int[] a = new int[100];
+
+            Console.Write("\n\nRead n number of values in an array and display it in reverse order:\n");
+            Console.Write("------------------------------------------------------------------------\n");
+
+            Console.Write("Input the number of elements to store in the array :");
+            n = Convert.ToInt32(Console.ReadLine());
+
+
+            Console.Write("Input {0} number of elements in the array :\n", n);
+            for (i = 0; i < n; i++)
+            {
+                Console.Write("element - {0} : ", i);
+                a[i] = Convert.ToInt32(Console.ReadLine());
+            }
+
+            Console.Write("\nThe values store into the array are : \n");
+            for (i = 0; i < n; i++)
+            {
+                Console.Write("{0}  ", a[i]);
+            }
+
+            Console.Write("\n\nThe values store into the array in reverse are :\n");
+            for (i = n - 1; i >= 0; i--)
+            {
+                Console.Write("{0} ", a[i]);
+            }
+            Console.Write("\n\n");
+            Console.Read();
+        }
+
+        /* Copy the elements one array into another array.*/
+        static void CopyArraytoArray()
+        {
+            int[] arr1 = new int[100];
+            int[] arr2 = new int[100];
+            int i, n;
+
+
+            Console.Write("\n\nCopy the elements one array into another array :\n");
+            Console.Write("----------------------------------------------------\n");
+
+            Console.Write("Input the number of elements to be stored in the array :");
+            n = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Input {0} elements in the array :\n", n);
+            for (i = 0; i < n; i++)
+            {
+                Console.Write("element - {0} : ", i);
+                arr1[i] = Convert.ToInt32(Console.ReadLine());
+            }
+            /* Copy elements of first array into second array.*/
+            for (i = 0; i < n; i++)
+            {
+                arr2[i] = arr1[i];
+            }
+
+            /* Prints the elements of first array   */
+            Console.Write("\nThe elements stored in the first array are :\n");
+            for (i = 0; i < n; i++)
+            {
+                Console.Write("{0}  ", arr1[i]);
+            }
+
+            /* Prints the elements copied into the second array. */
+            Console.Write("\n\nThe elements copied into the second array are :\n");
+            for (i = 0; i < n; i++)
+            {
+                Console.Write("{0}  ", arr2[i]);
+            }
+            Console.Write("\n\n");
+            Console.Read();
+
+        }
+    }
+}
